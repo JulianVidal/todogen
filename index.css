@@ -1,6 +1,7 @@
 :root {
   --bg-color: #FAFAFA;
   --tx-color: #212121;
+  --font: 'Asap', sans-serif;
 }
 
 html {
@@ -29,11 +30,10 @@ body {
 
 #text {
   font-size: 2rem;
-  font-family: 'FranklinGothicLTPro-DmCm', sans-serif;
-  font-weight: 800;
-  user-select: none;
+  font-family: var(--font);
+  font-weight: 600;
   text-align: center;
-  margin-bottom: 7%;
+  margin-bottom: 45px;
 }
 
 #button {
@@ -41,7 +41,7 @@ body {
   user-select: none;
   width: 15%;
   height: 10%;
-  font-family: sans-serif;
+  font-family: var(--font);
   font-size: 1.3rem;
   border: none;
   border: solid 2px #6C49CD;
@@ -65,4 +65,12 @@ body {
 
 #button:hover {
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.2), 0 6px 20px 0 #6C49CD;
+}
+
+h1 {
+  position: absolute;
+  top: 15px;
+  color: var(--tx-color);
+  font-family: var(--font);
+  font-size: 3rem;
 }

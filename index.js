@@ -29,8 +29,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
 });
 
 Promise.all([
-  fetch("./cities.json").then(res => res.json()).then(json => json.map(el => el.name)),
-  fetch("./common.json").then(res => res.json()).then(json => json.commonWords),
   fetch("./actions.json").then(res => res.json()),
   fetch("./places.json").then(res => res.json())
 ])
