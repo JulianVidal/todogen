@@ -1,7 +1,14 @@
 let cities, words, actions, places;
-console.log(document)
 document.getElementById("button").addEventListener("click", () => {
-  main()
+  document.getElementById("text").classList.remove("animate__flipInX")
+  document.getElementById("text").classList.add("animate__flipOutX")
+
+  setTimeout(() => {
+    document.getElementById("text").innerHTML = 0;
+    document.getElementById("text").classList.remove("animate__flipOutX")
+    main()
+    document.getElementById("text").classList.add("animate__flipInX")
+  }, 1000)
 })
 
 document.addEventListener("keyup", e => {
