@@ -1,4 +1,4 @@
-let cities, words, actions, places;
+let cities, actions, places;
 window.onload = () => {
     document.getElementById("button").addEventListener("click", () => {
     document.getElementById("text").classList.remove("animate__flipInX")
@@ -29,11 +29,12 @@ window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
 });
 
 Promise.all([
+  fetch("./cities.json").then(res => res.json()).then(json => json.map(el => el.name)),
   fetch("./actions.json").then(res => res.json()),
   fetch("./places.json").then(res => res.json())
 ])
 .then(data => {
-  [cities, words, actions, places] = data
+  [cities, actions, places] = data
   main()
 })
 
