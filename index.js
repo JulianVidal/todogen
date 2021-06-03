@@ -20,6 +20,14 @@ document.addEventListener("keyup", e => {
   }
 })
 
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.documentElement.setAttribute("theme", "dark")
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+  document.documentElement.setAttribute("theme", e.matches ? "dark" : "light")
+});
+
 Promise.all([
   fetch("./cities.json").then(res => res.json()).then(json => json.map(el => el.name)),
   fetch("./common.json").then(res => res.json()).then(json => json.commonWords),
