@@ -1,15 +1,17 @@
 let cities, words, actions, places;
-document.getElementById("button").addEventListener("click", () => {
-  document.getElementById("text").classList.remove("animate__flipInX")
-  document.getElementById("text").classList.add("animate__flipOutX")
-
-  setTimeout(() => {
-    document.getElementById("text").innerHTML = 0;
-    document.getElementById("text").classList.remove("animate__flipOutX")
-    main()
-    document.getElementById("text").classList.add("animate__flipInX")
-  }, 1000)
-})
+window.onload = () => {
+    document.getElementById("button").addEventListener("click", () => {
+    document.getElementById("text").classList.remove("animate__flipInX")
+    document.getElementById("text").classList.add("animate__flipOutX")
+  
+    setTimeout(() => {
+      document.getElementById("text").innerHTML = 0;
+      document.getElementById("text").classList.remove("animate__flipOutX")
+      main()
+      document.getElementById("text").classList.add("animate__flipInX")
+    }, 1000)
+  })
+}
 
 document.addEventListener("keyup", e => {
   if (e.key == ' ') {
