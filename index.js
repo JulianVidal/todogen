@@ -1,6 +1,6 @@
 let cities, words, actions, places;
-
-document.addEventListener("click", () => {
+console.log(document)
+document.getElementById("button").addEventListener("click", () => {
   main()
 })
 
